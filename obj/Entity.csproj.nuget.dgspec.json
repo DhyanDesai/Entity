@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\dhyan.desai\\Downloads\\Entity-20240329T041548Z-001\\Entity\\Entity\\Entity.csproj": {}
+    "C:\\Users\\Dell\\Desktop\\Office\\Entity\\Entity.csproj": {}
   },
   "projects": {
-    "C:\\Users\\dhyan.desai\\Downloads\\Entity-20240329T041548Z-001\\Entity\\Entity\\Entity.csproj": {
+    "C:\\Users\\Dell\\Desktop\\Office\\Entity\\Entity.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\dhyan.desai\\Downloads\\Entity-20240329T041548Z-001\\Entity\\Entity\\Entity.csproj",
+        "projectUniqueName": "C:\\Users\\Dell\\Desktop\\Office\\Entity\\Entity.csproj",
         "projectName": "Entity",
-        "projectPath": "C:\\Users\\dhyan.desai\\Downloads\\Entity-20240329T041548Z-001\\Entity\\Entity\\Entity.csproj",
-        "packagesPath": "C:\\Users\\dhyan.desai\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\dhyan.desai\\Downloads\\Entity-20240329T041548Z-001\\Entity\\Entity\\obj\\",
+        "projectPath": "C:\\Users\\Dell\\Desktop\\Office\\Entity\\Entity.csproj",
+        "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Dell\\Desktop\\Office\\Entity\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\dhyan.desai\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Dell\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -32,11 +32,6 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -68,7 +63,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.201/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
