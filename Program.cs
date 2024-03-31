@@ -2,7 +2,7 @@
 
 class Program
 {
-    static async void Main(string[] args)
+    static async Task Main(string[] args)
     {
         DemoDbContext contextClass = new DemoDbContext();
         var DbContext = new DemoDbContext();
