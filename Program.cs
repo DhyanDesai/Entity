@@ -15,7 +15,8 @@ class Program
                 System.Console.WriteLine("1.SHOW Data.");
                 System.Console.WriteLine("2.ADD Data.");
                 System.Console.WriteLine("3.UPDATE Data.");
-                System.Console.WriteLine("4.Exit");
+                System.Console.WriteLine("4.DELETE Data.");
+                System.Console.WriteLine("5.Exit");
                 System.Console.WriteLine("Enter an option :");
                 menuInput = Convert.ToInt32(Console.ReadLine());
                 switch (menuInput)
@@ -30,13 +31,16 @@ class Program
                         contextClass.UpdateData();
                         break;
                     case 4:
+                        contextClass.DeleteData();
+                    break;
+                    case 5:
                         System.Console.WriteLine("Thank You!!!");
                         break;
                     default:
                         DbContext.InvalidInputMessage();
                         break;
                 }
-            } while (menuInput != 4);
+            } while (menuInput != 5);
         }
         catch (System.Exception e)
         {

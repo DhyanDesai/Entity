@@ -77,7 +77,7 @@ namespace Entity
                     System.Console.WriteLine("Enter Last Name");
                     newEmployee.Last_name = Console.ReadLine();
                     System.Console.WriteLine("Enter Department Name");
-                    string departmentName = Console.ReadLine();
+                    string ? departmentName = Console.ReadLine();
                     var department = DepartmentModel.FirstOrDefault(x => x.Dept_Name == departmentName);
                     if (department == null)
                     {
@@ -152,6 +152,59 @@ namespace Entity
                 default:
                     InvalidInputMessage();
                     break;
+            }
+        }
+
+        public void DeleteData(){
+            int deleteInput = 0;
+            System.Console.WriteLine("Press 1 to delete from department table");
+            System.Console.WriteLine("Press 2 to delete from employee table");
+            System.Console.WriteLine("Enter your choice:");
+            deleteInput = Convert.ToInt32(Console.ReadLine());
+
+            switch (deleteInput)
+            {
+                case 1:
+                    System.Console.WriteLine("Enter ID you want to delete:");
+                    if (int.TryParse(Console.ReadLine(),out int deptId))
+                    {
+                        var deleteDeptID = DepartmentModel.Find(deptId);
+                        if (deleteDeptID != null){
+                            DepartmentModel.Remove(deleteDeptID);
+                            SaveChanges();
+                            SuccessMessage();
+                        }
+                        else
+                        {
+                            System.Console.WriteLine("Department ID Does Not Exist");
+                        }
+                    }
+                    else{
+                        System.Console.WriteLine("Enter a valid ID");
+                    }
+                break;
+                case 2:
+                    System.Console.WriteLine("Enter ID you want to delete:");
+                    if (int.TryParse(Console.ReadLine(),out int empId))
+                    {
+                        var deleteEmpID = EmployeeModel.Find(empId);
+                        if (deleteEmpID != null){
+                            EmployeeModel.Remove(deleteEmpID);
+                            SaveChanges();
+                            SuccessMessage();
+                        }
+                        else
+                        {
+                            System.Console.WriteLine("Employee ID Does Not Exist");
+                        }
+                    }
+                    else{
+                        System.Console.WriteLine("Enter a valid ID");
+                    }
+                break;
+                default:
+                    InvalidInputMessage();
+                break;
             }
         }
         public void SuccessMessage()
