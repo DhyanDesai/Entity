@@ -2,7 +2,7 @@
 
 class Program
 {
-    static void Main(string[] args)
+    static async void Main(string[] args)
     {
         DemoDbContext contextClass = new DemoDbContext();
         var DbContext = new DemoDbContext();
@@ -25,13 +25,13 @@ class Program
                         contextClass.ShowData();
                         break;
                     case 2:
-                        contextClass.AddData();
+                         await contextClass.AddData();
                         break;
                     case 3:
-                        contextClass.UpdateData();
+                        await contextClass.UpdateData();
                         break;
                     case 4:
-                        contextClass.DeleteData();
+                        await contextClass.DeleteData();
                     break;
                     case 5:
                         System.Console.WriteLine("Thank You!!!");

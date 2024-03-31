@@ -50,7 +50,7 @@ namespace Entity
 
         }
 
-        public void AddData()
+        public async Task AddData()
         {
             int addInput = 0;
             System.Console.WriteLine("Press 1 to add from department table");
@@ -66,7 +66,7 @@ namespace Entity
                     System.Console.WriteLine("Enter Department Name");
                     newDepartment.Dept_Name = Console.ReadLine();
                     Add(newDepartment);
-                    SaveChanges();
+                    await SaveChangesAsync();
                     SuccessMessage();
                     break;
                 case 2:
@@ -83,7 +83,7 @@ namespace Entity
                     {
                         department = new DepartmentModel() { Dept_Name = departmentName };
                         DepartmentModel.Add(department);
-                        SaveChanges();
+                        await SaveChangesAsync();
                         newEmployee.Dept_ID = department.ID;
                     }
                     else
@@ -98,7 +98,7 @@ namespace Entity
                     newEmployee.State = Console.ReadLine();
 
                     Add(newEmployee);
-                    SaveChanges();
+                    await SaveChangesAsync();
                     SuccessMessage();
                     break;
                 case 3:
@@ -109,7 +109,7 @@ namespace Entity
                     break;
             }
         }
-        public void UpdateData()
+        public async Task UpdateData()
         {
             int updateInput = 0;
             System.Console.WriteLine("Press 1 to update from department table");
@@ -126,7 +126,7 @@ namespace Entity
                     System.Console.WriteLine("Enter New Department Name to Update");
                     UpdateDepartment.Dept_Name = Console.ReadLine();
                     DepartmentModel.Update(UpdateDepartment);
-                    SaveChanges();
+                    await SaveChangesAsync();
                     SuccessMessage();
                     break;
                 case 2:
@@ -146,7 +146,7 @@ namespace Entity
                     System.Console.WriteLine("Enter new State");
                     UpdateEmployee.State = Console.ReadLine();
                     EmployeeModel.Update(UpdateEmployee);
-                    SaveChanges();
+                    await SaveChangesAsync();
                     SuccessMessage();
                     break;
                 default:
@@ -155,7 +155,7 @@ namespace Entity
             }
         }
 
-        public void DeleteData(){
+        public async Task DeleteData(){
             int deleteInput = 0;
             System.Console.WriteLine("Press 1 to delete from department table");
             System.Console.WriteLine("Press 2 to delete from employee table");
@@ -171,7 +171,7 @@ namespace Entity
                         var deleteDeptID = DepartmentModel.Find(deptId);
                         if (deleteDeptID != null){
                             DepartmentModel.Remove(deleteDeptID);
-                            SaveChanges();
+                            await SaveChangesAsync();
                             SuccessMessage();
                         }
                         else
@@ -190,7 +190,7 @@ namespace Entity
                         var deleteEmpID = EmployeeModel.Find(empId);
                         if (deleteEmpID != null){
                             EmployeeModel.Remove(deleteEmpID);
-                            SaveChanges();
+                            await SaveChangesAsync();
                             SuccessMessage();
                         }
                         else
